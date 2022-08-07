@@ -53,4 +53,4 @@ import locale
 dt = datetime(2022, 8, 7)
 locale.setlocale(locale.LC_ALL, 'ja_JP.UTF-8')  # 地域を設定して、地域ごとに表示する曜日を変更
 print(dt.strftime('%A, %a, %B, %b'))    # 曜日フォーマット(日曜日, 日, 8月, 8)
-print(dt.strftime('%Y-%m-%d %H:%M:%S %a'))  # 時間と曜日の組み合わせ
+print(dt.strftime('%Y-%m-%d %H:%M:%S %A'))  # 時間と曜日の組み合わせ
