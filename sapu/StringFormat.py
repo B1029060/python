@@ -17,6 +17,8 @@ print(result)
 x = 123
 result = f'No: {x:010}'
 print(result)
+test = f'{str(2):002}'  # 対照組
+print(test) # str型を代入すると、02ではなく20になります
 # カンマ区切り
 x = 9000000
 result = f'{x:,}円あります'
