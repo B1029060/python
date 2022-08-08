@@ -15,4 +15,4 @@ for y in range(1, 6):
 # 他の引数は先に書く必要があります
 def func_2(x, **kwargs):
     print(f'{x}:{kwargs}')
-func_2(1, name='牛乳', price='200円')
+func_2(1, name='牛乳', price='300円')
