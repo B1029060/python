@@ -12,6 +12,6 @@ while x <= 10:
 # ファイル読み込み
 with open('test_FileOperation4.txt', 'r') as f:
     t = f.readline()
-    while t != '':
+    while t != '':  # EOFまで読み込む動作が止めません
         print(t)
         t = f.readline()
