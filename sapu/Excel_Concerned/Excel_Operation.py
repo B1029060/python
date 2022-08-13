@@ -62,9 +62,9 @@ for y in range(2, 14):
     y_list.append(f'C{y}')
     y_list.append(random.randint(8000, 100000)) # 適当に値を書き込む
 ws3 = wb.create_sheet('new new sheet')
-for y in range(1, len(y_list), 4):
-    ws3[y_list[y - 1]] = y_list[y]
-    ws3[y_list[y + 1]] = y_list[y + 2]  #終了
+for y in range(0, len(y_list), 4):
+    ws3[y_list[y]] = y_list[y + 1]
+    ws3[y_list[y + 2]] = y_list[y + 3]  #終了
 
 title =Reference(ws3, min_col=2, min_row=2, max_col=2, max_row=13)  # 1月から12月までのタイトルを取得
 data = Reference(ws3, min_col=3, min_row=2, max_col=3, max_row=13)  # データを取得
