@@ -12,7 +12,7 @@ import os   # 内部osについての操作
 import urllib   # '#'みたいな特殊文字を扱う時使う
 import json # 取得したデータを見やすくする
 
-# Pycharmでの環境変数設定が必要(Edit Configuration)
+# 環境変数設定が必要
 bearer_token = os.environ.get('BEARER_TOKEN')   # バレへんバレへん
 headers = {'Authorization': f'Bearer {bearer_token}'}  # Header(メールの件名的な感じ)
 shishitowa = urllib.parse.quote('#ししトワ')
