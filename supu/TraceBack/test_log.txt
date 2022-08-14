@@ -1,0 +1,18 @@
+[DEBUG] 2022-08-11 22:24:12,173 - Traceback (most recent call last):
+  File "C:\Users\user\Kani\python\sapu\TraceBack\code1.py", line 14, in main
+    code2.func1()
+  File "C:\Users\user\Kani\python\sapu\TraceBack\code2.py", line 2, in func1
+    func2()
+  File "C:\Users\user\Kani\python\sapu\TraceBack\code2.py", line 5, in func2
+    result = 1/0
+ZeroDivisionError: division by zero
+ (code1.py)
+[DEBUG] 2022-08-11 22:24:29,023 - Traceback (most recent call last):
+  File "C:\Users\user\Kani\python\sapu\TraceBack\code1.py", line 14, in main
+    code2.func1()
+  File "C:\Users\user\Kani\python\sapu\TraceBack\code2.py", line 2, in func1
+    func2()
+  File "C:\Users\user\Kani\python\sapu\TraceBack\code2.py", line 5, in func2
+    result = 1/0
+ZeroDivisionError: division by zero
+ (code1.py)
