@@ -9,6 +9,7 @@ def Collatz(num):
         print('Invalid input')  # print 'Invalid input' when num is integer under 1
 
 try:
+    print('Enter number: ')
     Collatz(int(input()))   # assign int variable type
 except ValueError:
     print('Wrong Variable Type')
