@@ -15,8 +15,8 @@ import json # 取得したデータを見やすくする
 # 環境変数設定が必要
 bearer_token = os.environ.get('BEARER_TOKEN')   # バレへんバレへん
 headers = {'Authorization': f'Bearer {bearer_token}'}  # Header(メールの件名的な感じ)
-shishitowa = urllib.parse.quote('#ししトワ')
-url = f'https://api.twitter.com/2/tweets/search/recent?query={shishitowa} -is:retweet'  # このurlにリクエスト投げます
+shishirobotan_2nd_anniversary = urllib.parse.quote('#獅白ぼたん2周年') # デビュー日：8/14
+url = f'https://api.twitter.com/2/tweets/search/recent?query={shishirobotan_2nd_anniversary} -is:retweet'  # このurlにリクエスト投げます
 response = requests.get(url, headers=headers)  # Twitter側にリクエスト送って、レスポンスが帰ってくる
 # 中身がわからないので、json形式に変換して、Python側ではリストとして扱います
 json_response = response.json()

@@ -8,7 +8,7 @@
 
 # 他のディレクトリのファイルを開ける時
 # ".."で一つ前のディレクトリに戻ります、　"/ファイル名"で指定したファイルに入る
-with open("../AtCoder/BeginnerContest261/A_Intersection.py") as f:
+with open("../AtCoder/BeginnerContest/261/A_Intersection.py") as f:
     s = f.read()
     print(s)
 # with内のコードが全部実行されたら、自動的に閉じる(クローズ)
