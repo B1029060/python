@@ -3,7 +3,7 @@
 # 第一段階：API用アカウントを作る(Twitter developer Document)
 
 # 第二段階：bearer tokenを環境変数に設定
-# ローカルで環境変数を設定して、Pythonで取得すれば、バレても内容を守れます(Pythonで直接書き込みはNG、バレる可能性大)
+# ローカルで環境変数を設定して、Pythonで取得すれば、見られても内容を守れます(Pythonで直接書き込みはNG、バレる可能性大)
 # Mac：export BEARER_TOKEN = XXX(さっき取得した値) Windows：set BEARER_TOKEN = XXX(さっき取得した値)
 
 # 第三段階：PythonでTweetを取得する
@@ -20,4 +20,4 @@ url = f'https://api.twitter.com/2/tweets/search/recent?query={shishirobotan_2nd_
 response = requests.get(url, headers=headers)  # Twitter側にリクエスト送って、レスポンスが帰ってくる
 # 中身がわからないので、json形式に変換して、Python側ではリストとして扱います
 json_response = response.json()
-print(json.dumps(json_response, indent=2, ensure_ascii=False))
+print(json.dumps(json_response, indent=4, ensure_ascii=False))
