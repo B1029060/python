@@ -44,5 +44,6 @@ for i in range(ord('a'), ord('f')):
 (Dir2 / 'test-a.txt').unlink(missing_ok=True)   # ファイル削除/ファイルが存在しなくてもエラーにならない
 # ディレクトリの作成、削除
 for i in range(1, 11):
-    (Path.cwd() / f'NewDir{i}').mkdir(exist_ok=True)   # NewDir1から10まで作成/エラーにならない
-(Path.cwd() / 'NewDir5').rmdir()    # ディレクトリ削除
+    (x := (Path.cwd() / f'NewDir{i}')).mkdir(exist_ok=True)   # NewDir1から10まで作成/エラーにならない
+    (x / f'NewTex{i}.txt').touch(exist_ok=True) if i != 5 else None # NewDir5以外にファイル生成しない
+(Path.cwd() / 'NewDir5').rmdir()    # 空ディレクトリ削除
