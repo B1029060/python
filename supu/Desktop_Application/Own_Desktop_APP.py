@@ -5,6 +5,7 @@ from  pathlib import  Path
 from tkinter import  filedialog # データ保存用
 import  openpyxl
 import time
+import sys
 
 class Application(tkinter.Frame):   # フレームオブジェクト作成、アプリの中身を書く
     def __init__(self, root=None):
@@ -36,6 +37,12 @@ class Application(tkinter.Frame):   # フレームオブジェクト作成、ア
         self.message = tkinter.Message(self)
         self.message.pack()
 
+        # 読み込みボタン
+        read_btn = tkinter.Button(self)
+        read_btn['text'] = '読み込み'
+        read_btn['command'] = self.read_data
+        read_btn.pack()
+
     # 保存するタイプのアプリ：データ永続化
     # Tkinter x Excel
     def save_data(self):
@@ -46,10 +53,27 @@ class Application(tkinter.Frame):   # フレームオブジェクト作成、ア
         ws = wb.worksheets[0]
         mem = 1 if not ws['A1'].value else (ws['A1'].value % 10000) + 1   # 回数記録(1-10000)\value付いてないと計算できん
         ws['A1'] = mem    # 回数書き込み
+        ws['A2'] = ws['A1'].value # read_data操作用
         ws[f'B{mem}'] = text    # 改行
         wb.save(file_name)
         time.sleep(0.7)  # 0.7秒表示させる
         self.message['text'] = '保存完了'
+
+    def read_data(self):
+        file_name = tkinter.filedialog.askopenfilename(initialfile=(Path.cwd() / 'data.xlsx'))
+        wb = openpyxl.load_workbook(file_name)
+        ws = wb.worksheets[0]
+        if ws['A2'].value == 1:
+            ws['A2'].value = 10001
+        read_idx = ws['A2'].value - 1
+        if not ws[f'B{read_idx}'].value:
+            self.message['text'] = 'まだデータがありません'
+            time.sleep(2)
+            sys.exit(0)
+        text = ws[f'B{read_idx}'].value
+        ws['A2'] = read_idx
+        self.message['text'] = text # 上のテキストを表示させる
+        wb.save(file_name)
 
 root = tkinter.Tk() # アプリの土台
 root.title('Kaniのアプリ')  # タイトル
