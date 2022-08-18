@@ -44,9 +44,7 @@ class Application(tkinter.Frame):   # フレームオブジェクト作成、ア
         file_name = tkinter.filedialog.askopenfilename(initialfile=(Path.cwd() / 'data.xlsx'))
         wb = openpyxl.load_workbook(file_name)
         ws = wb.worksheets[0]
-        if ws['A1'].value >= 10000:
-            ws['A1'].value = 0  # 最初のマスから書き込み、そのデータが上書きされる\A[0 + 1] = A[1]
-        mem = 1 if not ws['A1'].value else ws['A1'].value + 1   # 回数記録\value付いてないと計算できん
+        mem = 1 if not ws['A1'].value else (ws['A1'].value % 10000) + 1   # 回数記録(1-10000)\value付いてないと計算できん
         ws['A1'] = mem    # 回数書き込み
         ws[f'B{mem}'] = text    # 改行
         wb.save(file_name)
