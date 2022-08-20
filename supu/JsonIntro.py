@@ -25,9 +25,9 @@ print(obj)  # {'id': 446, 'is_lion': True}
 print(type(obj))    # <class 'dict'>
 print(obj['id'])    # 446
 
-text = '{"id": 446, "sub":{"member": 1230000, "vids": 646}}'
+text = '{"id": 446, "sub":{"member": 1230000, "vids": 646, "rcd_time": "2022/08/20"}}'
 obj = json.loads(text)
-print(obj)  # {'id': 446, 'sub': {'member': 1230000, 'vids': 646}}
+print(obj)  # {'id': 446, 'sub': {'member': 1230000, 'vids': 646, 'rcd_time': '2022/08/20'}}
 print(obj['sub']['vids'])   # 646
 
 #  特殊文字
