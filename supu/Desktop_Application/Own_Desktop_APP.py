@@ -67,13 +67,15 @@ class Application(tkinter.Frame):   # フレームオブジェクト作成、ア
             ws['A2'].value = 10001
         read_idx = ws['A2'].value - 1
         if not ws[f'B{read_idx}'].value:
-            self.message['text'] = 'まだデータがありません'
+            ws['A2'].value = 1
+            wb.save(file_name)
             time.sleep(2)
-            sys.exit(0)
-        text = ws[f'B{read_idx}'].value
-        ws['A2'] = read_idx
-        self.message['text'] = text # 上のテキストを表示させる
-        wb.save(file_name)
+            self.message['text'] = 'まだデータがありません'
+        else:
+            text = ws[f'B{read_idx}'].value
+            ws['A2'] = read_idx
+            self.message['text'] = text # 上のテキストを表示させる
+            wb.save(file_name)
 
 root = tkinter.Tk() # アプリの土台
 root.title('Kaniのアプリ')  # タイトル
