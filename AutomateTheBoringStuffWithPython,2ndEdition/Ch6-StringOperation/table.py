@@ -8,7 +8,7 @@ def printTable(data):
     for x in range(len(data)):
         colWidths[x] = 0
         for y in range(len(data[x])):
-            if len(data[x][y]) >= colWidths[x]:
+            if len(data[x][y]) > colWidths[x]:
                 colWidths[x] = len(data[x][y])
 
     # Output
