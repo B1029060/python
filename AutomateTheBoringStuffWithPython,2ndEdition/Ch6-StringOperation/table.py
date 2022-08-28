@@ -13,7 +13,7 @@ def printTable(data):
                 colWidths[x] = len(data[x][y])
 
     # Output
-    for x in range((len(data[0]))):
+    for x in range(len(data[0])):
         text = ''
         for y in range(len(data)):
             text += data[y][x].rjust(colWidths[y]) + ' '
