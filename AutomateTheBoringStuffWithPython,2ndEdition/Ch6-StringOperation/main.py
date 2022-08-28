@@ -23,3 +23,6 @@ print('|' + spam.strip() + '|' + spam.lstrip() + '|' + spam.rstrip() + '|') # Re
 import pyperclip    # pip install pyperclip
 pyperclip.copy(name)
 print(pyperclip.paste())    # My name is Simon
+
+word = 'SpamSpamBaconSpamEggsSpamSpam'
+print(word.strip('pSam'))   # BaconSpamEggs/No order/Start from both sides, end when condition is false
