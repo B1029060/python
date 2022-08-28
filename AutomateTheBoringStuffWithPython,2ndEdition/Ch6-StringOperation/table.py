@@ -3,7 +3,7 @@ tableData = [['apples', 'oranges', 'cherries', 'banana'],
              ['dogs', 'cats', 'moose', 'goose']]
 
 def printTable(data):
-    # Save the longest width of string
+    # Save the longest width of string in list
     colWidths = [0] * len(data)
     for x in range(len(data)):
         colWidths[x] = 0
