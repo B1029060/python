@@ -42,6 +42,6 @@ def compare_sentence(sentence):
         print('Irregular sentence: ' + sentence)
 
 stc_1 = 'Alice pets cats.'
-stc_2 = 'Alice is beautiful'
-compare_sentence(stc_1)
-compare_sentence(stc_2)
+stc_2 = 'Alice is beautiful.'
+compare_sentence(stc_1) # Alice pets cats.
+compare_sentence(stc_2) # Irregular sentence: Alice is beautiful.
